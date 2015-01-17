@@ -45,7 +45,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%i:%d", self.tag, indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%li:%ld", (long)self.tag, (long)indexPath.row];
     
     return cell;
 }

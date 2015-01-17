@@ -56,7 +56,7 @@
     if (cell == nil)
         cell = [[Cell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     
-    cell.label.text = [NSString stringWithFormat:@"Item: %i", indexPath.row];
+    cell.label.text = [NSString stringWithFormat:@"Item: %li", (long)indexPath.row];
     cell.cellCount = arc4random() % 10 + 10;
     cell.drillDelegate = self;
     cell.tag = indexPath.row;
@@ -109,7 +109,7 @@
 
 - (void)didSelectedCell:(Cell *)cell indexPath:(NSIndexPath *)indexPath
 {
-    cell.label.text = [NSString stringWithFormat:@"Item: %i:%i", cell.tag, indexPath.row];
+    cell.label.text = [NSString stringWithFormat:@"Item: %li:%li", (long)cell.tag, (long)indexPath.row];
     [self tableView:self.tableView didSelectRowAtIndexPath:[NSIndexPath indexPathForItem:cell.tag inSection:0]];
 }
 
