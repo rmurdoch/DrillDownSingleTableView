@@ -53,9 +53,6 @@
 {
     Cell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    if (cell == nil)
-        cell = [[Cell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    
     cell.label.text = [NSString stringWithFormat:@"Item: %li", (long)indexPath.row];
     cell.cellCount = arc4random() % 10 + 10;
     cell.drillDelegate = self;
